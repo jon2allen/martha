@@ -1,0 +1,37 @@
+<!doctype html>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style1.css') }}">
+<title>{% block title %}{% endblock %} - Search Table</title>
+<section class="content">
+  <H3> Results </H3>
+  <p>
+  <H3> numbers of records:  {{ num_results }} </H3>
+  <p>
+  {% for k in ksearch %} 
+       {% if k|length %}    
+       Keyword: {{ k }}   &nbsp; &nbsp;
+       {% endif %}
+  {% endfor %}
+  </p>
+  <table>
+    <tr>
+        <th>Rec id</th>
+        <th>Title</th>
+        <th>Source URL</th>
+    </tr>
+  {% for item in results %}
+    <tr>
+        <td>
+            <a href=displayrec1?item={{item[0]}} > {{item[0]}}</a>
+        </td>
+        <td>
+            {{item[1]}}
+        </td>
+        <td>
+            {{item[2]}}
+        </td>
+    </tr>
+  {% endfor %}
+  </table>
+
+
+</section>

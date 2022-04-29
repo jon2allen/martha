@@ -1,0 +1,21 @@
+
+{% block header %}
+  <h1>{% block title %}Recipe Title keyword Search{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label> Search text #1</label> <br>
+    <input type="text" name="keyword" id="keyword" />
+    <label> Search text #2 </label> <br>
+    <input type="text" name="keyword" id="keyword" />    
+    <label> Search text #3</label> <br>
+    <input type="text" name="keyword" id="keyword" />
+    <p>AND and OR select - defaults to OR</p>
+    <input type="radio" id="or_sel" name="or_sel" value="or_sel" checked>
+    <label for="or_sel">OR for SQL query </label><br>
+    <input type="radio" id="and_sel" name="and_sel" value="and_sel">
+    <label for="adult">And for SQL query </label><br>
+    <input type="submit" />
+  </form>
+{% endblock %}

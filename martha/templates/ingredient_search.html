@@ -1,0 +1,22 @@
+
+{% block header %}
+  <h1>{% block title %}Recipe Ingredient keyword Search{% endblock %}</h1>
+{% endblock %}
+
+<h2> Choose up to 3 keywords - no spaces</h2>
+{% block content %}
+  <form method="post">
+    <input type="text" name="keyword1" id="keyword1" />
+    <label> Search text #1</label> <br>
+    <input type="text" name="keyword2" id="keyword2" />  
+    <label> Search text #2 </label> <br>  
+    <input type="text" name="keyword3" id="keyword3" />
+    <label> Search text #3</label> <br>
+    <p>AND and OR select - defaults to OR</p>
+    <input type="radio" id="or_sel" name="and_sel" value="or_sel" checked>
+    <label for="or_sel">OR for SQL query </label><br>
+    <input type="radio" id="and_sel" name="and_sel" value="and_sel">
+    <label for="adult">And for SQL query </label><br>
+    <input type="submit" />
+  </form>
+{% endblock %}

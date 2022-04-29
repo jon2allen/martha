@@ -1,0 +1,12 @@
+
+{% block header %}
+  <h1>{% block title %}Recipe Title keyword Search{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+    <label> Search text </label> <br>
+    <input type="text" name="keyword" id="keyword" />
+    <input type="submit" />
+  </form>
+{% endblock %}

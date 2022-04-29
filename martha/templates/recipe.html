@@ -1,0 +1,30 @@
+<!doctype html>
+<title>{% block title %}{% endblock %} - Recipe display</title>
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style1.css') }}">
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+    <H2> {{ recipe[0] }} </H2>
+    <H2> {{ recipe[1] }} </H2>
+  </header>
+  <H3> Ingredients </H3>
+  {% for ing in recipe[2] %}
+    <div class="flash">{{ ing | safe }}</div>
+  {% endfor %}
+  <p>
+  <H3> Insructions </H3>
+  <p>
+  {% for dir in recipe[3] %}
+    <div class="flash">{{ dir }}</div>
+  {% endfor %}
+
+  <p>
+  <H3> http reference: <a href = {{ recipe[4] |safe }} > {{ recipe[4] | safe}}   </H3>
+  
+  <p>
+  <H3> created:  {{ recipe[5] }}   </H3>
+  <p>
+  <H3> categoy:  {{ recipe[6] }}   </H3>
+
+{% block content %}{% endblock %}
+</section>
