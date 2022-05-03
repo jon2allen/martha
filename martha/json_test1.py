@@ -42,3 +42,18 @@ if __name__ == "__main__":
     print( dt.month)
 
    # print("\n\n Date Published: ", d['datePublished'] )
+
+    instructions = data1['recipeIngredient']
+
+    for i in instructions:
+       print(i)
+
+    directions = data1['recipeInstructions']
+
+    count = 0
+    for d in directions:
+       count += 1
+       print(" " + str(count) + ":  " + d['text'])
+
+
+
